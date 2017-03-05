@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>SweetAlert</title>
+    <link rel="stylesheet" href="example.css">
+    <!-- This is what you need -->
+    <script src="sweet-alert.min.js"></script>
+    <link rel="stylesheet" href="sweet-alert.css">
+</head>
+
+<body>
+    <h1>Sweet Alert</h1>
+    <div class="showcase normal">
+        <h4>Обычный alert</h4>
+        <button>Show error message</button>
+        <h5>Code:</h5>
+        <pre><span class="func">alert</span>(<span class="str">"Oops... Something went wrong!"</span>);
+
+	</pre>
+        <div class="vs-icon"></div>
+    </div>
+    <div class="showcase sweet">
+        <h4>Sweet Alert</h4>
+        <button>Show error message</button>
+        <h5>Code:</h5>
+        <pre>sweetAlert(<span class="str">"Oops..."</span>, <span class="str">"Something went wrong!"</span>, <span class="str">"error"</span>);</pre>
+    </div>
+    <!-- Примеры -->
+    <h3>Примеры</h3>
+    <ul class="examples">
+        <li class="message">
+            <div class="ui">
+                <p>Обычное сообщение</p>
+                <button>Попробуй!</button>
+            </div>
+            <pre>swal(<span class="str">"Here's a message!"</span>)</pre>
+        </li>
+        <li class="title-text">
+            <div class="ui">
+                <p>Заголовок и текст</p>
+                <button>Попробуй!</button>
+            </div>
+            <pre>swal(<span class="str">"Here's a message!"</span>, <span class="str">"It's pretty, isn't it?"</span>)</pre>
+        </li>
+        <li class="success">
+            <div class="ui">
+                <p>Сообщение об успехе!</p>
+                <button>Попробуй!</button>
+            </div>
+            <pre>swal(<span class="str">"Good job!"</span>, <span class="str">"You clicked the button!"</span>, <span class="str">"success"</span>)</pre>
+        </li>
+        <li class="warning">
+            <div class="ui">
+                <p>Сообщение об ошибке с кнопкой подтвержденя</p>
+                <button>Попробуй!</button>
+            </div>
+            <pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Are you sure?"</span>,
+&nbsp;&nbsp;text: <span class="str">"Your will not be able to recover this imaginary file!"</span>,
+&nbsp;&nbsp;type: <span class="str">"warning"</span>,
+&nbsp;&nbsp;showCancelButton: <span class="val">true</span>,
+&nbsp;&nbsp;confirmButtonColor: <span class="str">"#DD6B55"</span>,
+&nbsp;&nbsp;confirmButtonText: <span class="str">"Yes, delete it!"</span>,
+&nbsp;&nbsp;closeOnConfirm: <span class="val">false</span>
+},
+<span class="func"><i>function</i></span>(){
+&nbsp;&nbsp;<span class="func">swal</span>(<span class="str">"Deleted!"</span>, <span class="str">"Your imaginary file has been deleted."</span>, <span class="str">"success</span>);
+});</pre>
+        </li>
+        <li class="custom-icon">
+            <div class="ui">
+                <p>Сообщение с иконкой</p>
+                <button>Попробуй!</button>
+            </div>
+            <pre>swal({
+&nbsp;&nbsp;title: <span class="str">"Sweet!"</span>,
+&nbsp;&nbsp;text: <span class="str">"Here's a custom image."</span>,
+&nbsp;&nbsp;imageUrl: <span class="str">"images/thumbs-up.jpg"</span>
+});</pre>
+        </li>
+    </ul>
+    <!-- Настройки плагина -->
+    <h3>Настройки плагина</h3>
+    <table>
+        <tr class="titles">
+            <th>
+                <div class="border-left"></div>
+                Параметры
+            </th>
+            <th>По умлчанию</th>
+            <th>
+                <div class="border-right"></div>
+                Описание
+            </th>
+        </tr>
+        <tr>
+            <td><b>title</b></td>
+            <td><i>null (обязательный)</i></td>
+            <td>Заголовок модального окна.</td>
+        </tr>
+        <tr>
+            <td><b>text</b></td>
+            <td><i>null</i></td>
+            <td>Текст-описание.</td>
+        </tr>
+        <tr>
+            <td><b>type</b></td>
+            <td><i>null</i></td>
+            <td>Тип модального окна: <strong>"warning"</strong>, <strong>"error"</strong>, <strong>"success"</strong> или <strong>"info"</strong>.</td>
+        </tr>
+        <tr>
+            <td><b>allowOutsideClick</b></td>
+            <td><i>false</i></td>
+            <td>Если <strong>true</strong>, то окно закроется при клике за его пределы.</td>
+        </tr>
+        <tr>
+            <td><b>showCancelButton</b></td>
+            <td><i>false</i></td>
+            <td>Если <strong>true</strong>, то будет показана кнопка отмены.</td>
+        </tr>
+        <tr>
+            <td><b>confirmButtonText</b></td>
+            <td><i>"OK"</i></td>
+            <td>Текст кнопки-подтверждения.</td>
+        </tr>
+        <tr>
+            <td><b>confirmButtonColor</b></td>
+            <td><i>"#AEDEF4"</i></td>
+            <td>Цвет кнопки-подтверждения.</td>
+        </tr>
+        <tr>
+            <td><b>cancelButtonText</b></td>
+            <td><i>"Cancel"</i></td>
+            <td>Текст кнопки отмены.</td>
+        </tr>
+        <tr>
+            <td><b>closeOnConfirm</b></td>
+            <td><i>true</i></td>
+            <td>При указание <strong>false</strong> окно останется открытом после действий пользователя.</td>
+        </tr>
+        <tr>
+            <td><b>imageUrl</b></td>
+            <td><i>null</i></td>
+            <td>Адрес собственной иконки.</td>
+        </tr>
+        <tr>
+            <td><b>imageSize</b></td>
+            <td><i>"80x80"</i></td>
+            <td>Размер иконки.</td>
+        </tr>
+    </table>
+    <script>
+    document.querySelector('.showcase.normal button').onclick = function() {
+
+        alert("Oops... Something went wrong!");
+    };
+
+    document.querySelector('.showcase.sweet button').onclick = function() {
+
+        swal("Oops...", "Something went wrong!", "error");
+    };
+
+    document.querySelector('ul.examples li.message button').onclick = function() {
+
+        swal("Here's a message!");
+    };
+
+    document.querySelector('ul.examples li.title-text button').onclick = function() {
+
+        swal("Here's a message!", "It's pretty, isn't it?")
+    };
+
+    document.querySelector('ul.examples li.success button').onclick = function() {
+
+        swal("Good job!", "You clicked the button!", "success");
+    };
+
+    document.querySelector('ul.examples li.warning:not(.no-close) button').onclick = function() {
+
+        swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: 'Yes, delete it!',
+                closeOnConfirm: false
+            },
+            function() {
+                swal("Deleted!", "Your imaginary file has been deleted!", "success");
+            });
+    };
+
+    document.querySelector('ul.examples li.custom-icon button').onclick = function() {
+
+        swal({
+            title: "Sweet!",
+            text: "Here's a custom image.",
+            imageUrl: 'images/thumbs-up.jpg'
+        });
+    };
+    </script>
+</body>
+
+</html>

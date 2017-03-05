@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>App Light IT</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/light_it.ico">
+    <meta charset='utf-8'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="star-rating-svg-master/src/jquery.star-rating-svg.js"></script>
+    <link rel="stylesheet" type="text/css" href="star-rating-svg-master/src/css/star-rating-svg.css">
+    <script src="js/main.js"></script>
+    <script src="js/additional.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="sweet-alert-plugin/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweet-alert-plugin/sweet-alert.css" />
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class='col-md-3 col-lg-3 col-md-offset-8 col-lg-offset-8 text-right'>
+                <div class='main-buttons'>
+                    <ul>
+                        <li>
+                            <a href="authorization.html">
+                                <button id='logOut'>Log out</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="authorization.html">
+                                <button id='auth'>Log in</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="registration.html">
+                                <button id="registration">Sign up!</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class='container' style="margin-bottom:10px">
+                <div class="row">
+                    <div class='col-md-4 col-lg-4'>
+                        <div class='product-buttons'>
+                            <ul>
+                                <li>
+                                    <button id='product1'>Product 1</button>
+                                </li>
+                                <li>
+                                    <button id='product2'>Product 2</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class='container' style="padding:0px;">
+            <div class='row'>
+                <section id='product-section' class="invisible">
+                    <div class='col-md-6'>
+                        <div class="product-title">
+                            <h1 class="page-header "></h1>
+                        </div>
+                        <div class='row'>
+                            <div class='product-photo text-center'>
+                                <img alt=''>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='product-description text-left'>
+                                <h1 class="page-header">Product description</h1>
+                                <p class="product-descript"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id='review-section' class="invisible">
+                    <div class='col-md-6'>
+                        <div class='row'>
+                            <div class='new-review review'>
+                                <div class='star-rate'>
+                                    <span class="my-rating-9"></span>
+                                    <span class="live-rating"></span>
+                                </div>
+                                <textarea id='review-content' placeholder='Type your review...' class='form-control'></textarea>
+                                <button type='submit' id="submit-review">Submit Review</button>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='reviews review'>
+                                <h1>Reviews</h1>
+                                <div class='review-list'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <p>&copy; <span id="year"></span> Test App Light IT Inc.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Preload -->
+    <style type="text/css">
+    #hellopreloader>p {
+        display: none;
+    }
+    
+    #hellopreloader_preload {
+        display: block;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 1000px;
+        background: #68C3A3 url(http://hello-site.ru//main/images/preloads/spinning-circles.svg) center center no-repeat;
+        background-size: 59px;
+    }
+    </style>
+    <div id="hellopreloader">
+        <div id="hellopreloader_preload"></div>        
+    </div>
+    <script type="text/javascript">
+    var hellopreloader = document.getElementById("hellopreloader_preload");
+
+    function fadeOutnojquery(el) {
+        el.style.opacity = 1;
+        var interhellopreloader = setInterval(function() {
+            el.style.opacity = el.style.opacity - 0.05;
+            if (el.style.opacity <= 0.05) {
+                clearInterval(interhellopreloader);
+                hellopreloader.style.display = "none";
+            }
+        }, 16);
+    }
+    window.onload = function() {
+        setTimeout(function() {
+            fadeOutnojquery(hellopreloader);
+        }, 1000);
+    };
+    </script>
+
+</body>
+
+</html>
